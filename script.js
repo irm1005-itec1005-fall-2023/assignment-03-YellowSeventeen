@@ -82,8 +82,8 @@ function removeToDoItem(todoId) {
     return false;
   }
   for (let i = 0; i < todoItems.length; i++) {
-    if (todoItems(i).id === todoId){
-      todoItems.splice(1,1);
+    if (todoItems[i].id === todoId){
+      todoItems.splice(1, 1);
       break;
     }
   }
@@ -95,9 +95,16 @@ function removeToDoItem(todoId) {
 // that matches the id passed to the function, set its completed property to true
 // the function does not need to return anything
 function markToDoItemAsCompleted(todoId) {
-  // Implement the logic to mark a task as completed here
-
-  console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
+  if (typeof todoId !== 'number'){
+    console.log("input invalid, please enter a task number")
+    return false
+  }
+  for (let i = 0; i < todoItems.length; i++) {
+    if (todoItems[i].id === todoId){
+      todoItems[i].completed = true;
+      break;
+    }
+  }
 }
 
 // Function to delete a task from the array
