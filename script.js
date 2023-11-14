@@ -150,3 +150,11 @@ function clearCompletedTasks() {
 //  console.log(todoItems); // This should show the todo item you added
 //  removeToDoItem(0); // This should remove the todo item with ID 0 from the array
 //  markToDoItemAsCompleted(0); // This should mark the todo item with ID 0 as completed
+
+for (let i = 0; i < todoItems.length; i++) {
+  if (todoItems[i].name === "Add a member to my cult"){
+    todoItems[i].name = "Add a member to my cult"
+    break;
+  }
+}
+console.log(todoItems);
